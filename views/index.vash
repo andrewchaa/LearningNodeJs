@@ -1,0 +1,8 @@
+<html>
+    <head>
+        <title>@model.title</title>
+    </head>
+    <body>
+    	Title: @model.title
+    </body>
+</html>
