@@ -5,4 +5,4 @@
 		homeController.init(app);
 	};
 
-})(module.exports)
+})(module.exports);
