@@ -6,5 +6,6 @@
   "dependencies": {
     "express": "~4.4.1",
     "vash": "^0.7.12-1"
-  }
+  },
+  "devDependencies": {}
 }

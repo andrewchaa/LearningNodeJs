@@ -1,9 +1,15 @@
 <html>
     <head>
         <title>@model.title</title>
-        <link href="/css/style.css" rel="stylesheet" />
+        <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     </head>
     <body>
     	@html.block("body")
+    	<script type="text/javascript" src="/lib/underscore/underscore.js" />
+    	<script type="text/javascript" src="/lib/jquery/dis/jquery.min.js" />
+    	<script type="text/javascript" src="/lib/dist/js/bootstrap.min.js" />
+
+
     </body>
 </html>
