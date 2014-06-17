@@ -5,7 +5,8 @@
   "private": true,
   "dependencies": {
     "express": "~4.4.1",
-    "vash": "^0.7.12-1"
+    "vash": "^0.7.12-1",
+    "mongodb": "~1.4.6"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
