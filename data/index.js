@@ -4,7 +4,16 @@
     var database = require('./database');
 
 	data.getNoteCategories = function (next) {
-		next(null, seedData.initialNotes);
+        database.getdb(function (err, db) {
+            db.notes.find().toArray(function (err, notes) {
+                if (err)
+                    console.log('failed to retrieve notes');
+
+                next(null, notes);
+            })
+        });
+
+		// next(null, seedData.initialNotes);
 	};
 
     function seedDatabase() {
