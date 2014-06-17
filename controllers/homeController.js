@@ -11,12 +11,13 @@
 					title: "express " + "engine",
 					error: err,
 					categories: results
-
 				});
-				
 			});
-
 		});
+
+		app.post('/newCategory', function (req, res) {
+			console.log(req.body.category);
+		})
 	};
 
 })(module.exports);

@@ -10,5 +10,12 @@
     @model.categories.forEach(function(category) {
       <div>@category.name</div>
     })
+
+    <p>
+      <form action="newCategory" method="post" class="form-line">
+        <input type="text" name="category" />
+        <input type="submit" />
+      </form>
+    </p>
   })
 })
