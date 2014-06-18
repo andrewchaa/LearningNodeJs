@@ -14,6 +14,22 @@
         });
 	};
 
+    data.getNoteByCategoryName = function (categoryName, next) {
+        database.getdb(function(err, db) {
+            if (err)
+                next(err);
+            else {
+                db.notes.findOne( { name : categoryName}, function (err, category) {
+                    if (err)
+                        next(err);
+                    else {
+                        next(null, category);
+                    }
+                })
+            }
+        });
+    };
+
     data.createNewCategory = function (category, next) {
         database.getdb(function (err, db) {
             if (err) {
