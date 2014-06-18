@@ -12,9 +12,23 @@
                 next(null, notes);
             })
         });
-
-		// next(null, seedData.initialNotes);
 	};
+
+    data.createNewCategory = function (category, next) {
+        database.getdb(function (err, db) {
+            if (err) {
+                next(err, null)
+            } else {
+                db.notes.insert(category, function (err) {
+                    if (err) {
+                        next(err);
+                    } else {
+                        next(null);
+                    }
+                })
+            }
+        });
+    };
 
     function seedDatabase() {
         database.getdb(function (err, db) {
