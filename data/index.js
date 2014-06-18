@@ -52,6 +52,10 @@
         });
     };
 
+    data.addNote = function (categoryName, note, function (err)) {
+
+    }
+
     function seedDatabase() {
         database.getdb(function (err, db) {
             if (err) {
