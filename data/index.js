@@ -17,13 +17,19 @@
     data.createNewCategory = function (category, next) {
         database.getdb(function (err, db) {
             if (err) {
-                next(err, null)
+                next(err)
             } else {
-                db.notes.insert(category, function (err) {
-                    if (err) {
-                        next(err);
+                db.notes.find( { name : category.name } ).count(function (count) {
+                    if (count != 0) {
+                        next('the category ' + category.name + ' already exists.')
                     } else {
-                        next(null);
+                        db.notes.insert(category, function (err) {
+                            if (err) {
+                                next(err);
+                            } else {
+                                next(null);
+                            }
+                        })
                     }
                 })
             }

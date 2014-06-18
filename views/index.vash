@@ -12,6 +12,10 @@
     })
 
     <p>
+      @if (model.errorMessage) {
+        <div class="alert alert-info">@model.errorMessage</div>
+      }
+      
       <form action="newCategory" method="post" class="form-line">
         <input type="text" name="category" />
         <input type="submit" />

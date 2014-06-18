@@ -10,6 +10,7 @@
                 res.render("index", { 
                     title: "express " + "engine",
                     error: err,
+                    errorMessage : req.flash('newCatName'),
                     categories: results
                 });
             });
@@ -24,7 +25,9 @@
             
             data.createNewCategory(category, function(err) {
             	if (err) {
-            		console.log('failed to create the category');
+            		console.log('failed to create the category because ' + err);
+
+            		req.flash('newCatName', err);
             		res.redirect('/');
             	} else {
             		res.redirect('/notes/' + category.name)
