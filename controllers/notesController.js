@@ -29,10 +29,11 @@
             data.addNote(req.params.categoryName, note, function (err) {
                 if (err) {
                     console.log("failed to save " + req.params.categoryName);
-                    req.flash("newCatName", "faile to save " +  req.params.categoryName);
-                    res.redirect("/")
+                    res.send(400, "Failed to add note to the database");
+
                 } else {
-                    res.redirect("/note/" + req.params.categoryName);
+                    res.set("Content-Type", "application/json");
+                    res.set(201, note)
                 }
             })
         });
