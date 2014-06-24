@@ -26,14 +26,14 @@
 
             console.log(note);
 
-            data.addNote(req.params.categoryName, note, function (err) {
+            data.addNote(req.params.categoryName, note, function (err, count) {
                 if (err) {
                     console.log("failed to save " + req.params.categoryName);
                     res.send(400, "Failed to add note to the database");
 
                 } else {
                     res.set("Content-Type", "application/json");
-                    res.set(201, note)
+                    res.send(201, note)
                 }
             })
         });

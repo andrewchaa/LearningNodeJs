@@ -7,13 +7,19 @@
       <p>Error occurred: @model.error</p>
     }
 
-    @model.categories.forEach(function(category) {
-      <div>@category.name</div>
-    })
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <div class="list-group">
+          @model.categories.forEach(function(category) {
+            <a href="/notes/@category.name" class="list-group-item">@category.name</a>
+          })
+        </div>
+      </div>
+    </div>
 
     <p>
       @if (model.errorMessage) {
-        <div class="alert alert-info">@model.errorMessage</div>
+        @model.errorMessage
       }
       
       <form action="newCategory" method="post" class="form-line">

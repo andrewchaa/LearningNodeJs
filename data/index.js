@@ -60,8 +60,7 @@
             }
             else {
                 db.notes.update( 
-                    { name : categoryName}, 
-                    { $push : { note : note } } 
+                    { name : categoryName }, { $push : { note : note } }, next
                 );
             }
         });
