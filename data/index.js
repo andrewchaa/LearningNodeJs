@@ -14,7 +14,7 @@
         });
 	};
 
-    data.getNoteByCategoryName = function (categoryName, next) {
+    data.getNotesByCategoryName = function (categoryName, next) {
         database.getdb(function(err, db) {
             if (err)
                 next(err);

@@ -35,6 +35,19 @@
 
             });
         })
+
+        app.get("/notes/:category", function (req, res) {
+            
+            var category = req.params.category;
+            data.getNotesByCategoryName(category, function(err, notes) {
+                if (err){
+                    console.log(err);
+                    res.send(400, err)
+                } else {
+                    res.render("note", { notes: notes });
+                }
+            })
+        });
     };
 
 })(module.exports);

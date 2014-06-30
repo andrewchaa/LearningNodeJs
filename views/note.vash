@@ -1,0 +1,21 @@
+@html.extend("layout", function (model) {
+    @html.block("scripts", function (model) {
+        <script src="/js/notesView.js"></script>
+    })
+
+    @html.block("body", function (model) {
+        <div ng-app="notesView">
+            <button class="btn btn-info">Back</button>
+
+            <div ng-controller="notesViewController">
+                <div ng-repeat="note in notes">
+                    <div class="well">
+                        <div>{{ note.note }}</div>
+                        <div>{{ note.author }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    })
+})
